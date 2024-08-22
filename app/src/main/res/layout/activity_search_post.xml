@@ -4,14 +4,26 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- Include the custom toolbar at the top -->
+    <include
+        android:id="@+id/custom_toolbar"
+        layout="@layout/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <!-- Instructions TextView -->
     <TextView
         android:id="@+id/tv_instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter Post ID:"
         android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_below="@id/custom_toolbar"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp" />
 
+    <!-- Post ID Input Field -->
     <EditText
         android:id="@+id/et_post_id"
         android:layout_width="match_parent"
@@ -19,13 +31,15 @@
         android:inputType="number"
         android:hint="Post ID"
         android:layout_below="@id/tv_instruction"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
+    <!-- Submit Button -->
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
         android:layout_below="@id/et_post_id"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

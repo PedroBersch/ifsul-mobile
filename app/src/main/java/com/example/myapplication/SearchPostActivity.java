@@ -21,17 +21,49 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SearchPostActivity extends AppCompatActivity {
-
+    private Button btnPost, btnPut, btnFindBy, btnAll, btnSubmit;
     private EditText etPostId;
-    private Button btnSubmit;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_post);
 
         etPostId = findViewById(R.id.et_post_id);
+
+        btnPost = findViewById(R.id.btn_post);
+        btnPut = findViewById(R.id.btn_put);
+        btnFindBy = findViewById(R.id.btn_findby);
+        btnAll = findViewById(R.id.btn_all);
         btnSubmit = findViewById(R.id.btn_submit);
+        etPostId = findViewById(R.id.et_post_id);
+
+//        btnPost.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(SearchPostActivity.this, PostActivity.class));
+//            }
+//        });
+
+//        btnPut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(SearchPostActivity.this, PutActivity.class));
+//            }
+//        });
+
+        btnFindBy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SearchPostActivity.this, SearchPostActivity.class));
+            }
+        });
+
+        btnAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SearchPostActivity.this, MainActivity.class));
+            }
+        });
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override

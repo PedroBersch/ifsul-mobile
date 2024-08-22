@@ -23,31 +23,51 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     ListView superListView;
-    Button btnOpenSearch;
-
+    private Button btnPost, btnPut, btnFindBy, btnAll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         superListView = findViewById(R.id.superListView);
-        btnOpenSearch = findViewById(R.id.btn_open_search);  // Initialize the button inside onCreate
+
+        btnPost = findViewById(R.id.btn_post);
+        btnPut = findViewById(R.id.btn_put);
+        btnFindBy = findViewById(R.id.btn_findby);
+        btnAll = findViewById(R.id.btn_all);
 
         getPosts();
 
-        btnOpenSearch.setOnClickListener(new View.OnClickListener() {
+//        btnPost.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Handle Post button click
+//                startActivity(new Intent(MainActivity.this, PostActivity.class));
+//            }
+//        });
+
+//        btnPut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Handle Put button click
+//                startActivity(new Intent(MainActivity.this, PutActivity.class));
+//            }
+//        });
+
+        btnFindBy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SearchPostActivity.class);
-                startActivity(intent);
+                // Handle FindBy button click
+                startActivity(new Intent(MainActivity.this, SearchPostActivity.class));
             }
         });
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        getPosts();
+        btnAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle All button click
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
     }
 
     private void getPosts() {
