@@ -37,12 +37,12 @@ public class SearchPostActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.btn_submit);
         etPostId = findViewById(R.id.et_post_id);
 
-//        btnPost.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(SearchPostActivity.this, PostActivity.class));
-//            }
-//        });
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SearchPostActivity.this, CreatePostActivity.class));
+            }
+        });
 
 //        btnPut.setOnClickListener(new View.OnClickListener() {
 //            @Override

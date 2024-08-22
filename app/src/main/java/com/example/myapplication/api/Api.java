@@ -16,4 +16,6 @@ public interface Api {
     Call<List<Posts>> getPosts();
     @GET("posts/{id}")
     Call<Posts> getPostById(@Path("id") int id);
+    @POST("/posts")
+    Call<Posts> createPost(@Body Posts post);
 }

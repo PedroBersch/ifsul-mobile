@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
         getPosts();
 
-//        btnPost.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Handle Post button click
-//                startActivity(new Intent(MainActivity.this, PostActivity.class));
-//            }
-//        });
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle Post button click
+                startActivity(new Intent(MainActivity.this, CreatePostActivity.class));
+            }
+        });
 
 //        btnPut.setOnClickListener(new View.OnClickListener() {
 //            @Override

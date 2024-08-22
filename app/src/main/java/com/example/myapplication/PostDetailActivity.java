@@ -56,6 +56,12 @@ public class PostDetailActivity extends AppCompatActivity {
                 startActivity(new Intent(PostDetailActivity.this, MainActivity.class));
             }
         });
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PostDetailActivity.this, CreatePostActivity.class));
+            }
+        });
         btnFindBy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
